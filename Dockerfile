@@ -13,7 +13,7 @@ RUN git clone https://github.com/uber/kepler.gl.git
 WORKDIR /kepler.gl/examples/demo-app
 
 # using taobao npm source
-RUN npm install cnpm --registry=https://registry.npm.taobao.org
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 RUN cnpm install
 
 ENV PATH "$PATH:/kepler.gl/examples/demo-app/node_modules/.bin"
