@@ -3,11 +3,14 @@
 * [http://kepler.gl](http://kepler.gl)
 * [https://github.com/uber/kepler.gl](https://github.com/uber/kepler.gl)
 
-## Pull
+To make kepler keeping the newest version, you should docker build firstly, and then run it.
+
+## Build
 
 ```bash
-docker pull crazycapivara/kepler.gl
+docker build -t crazycapivara/kepler.gl https://github.com/xunhs/docker-kepler.gl.git
 ```
+
 
 ## Run
 
@@ -21,10 +24,3 @@ docker run  --name kepler.gl -p 8080:80 \
 
 Some modules need to be build at startup. Therefore, it will a take a minute until the container is ready to use
 at [http://localhost:8080](http://localhost:8080).
-
-## Build
-
-```bash
-docker build -t crazycapivara/kepler.gl https://github.com/xunhs/docker-kepler.gl.git
-```
-
