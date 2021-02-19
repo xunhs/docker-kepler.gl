@@ -8,18 +8,18 @@ To make kepler keeping the newest version, you should docker build firstly, and 
 ## Build
 
 ```bash
-docker build -t crazycapivara/kepler.gl https://github.com/xunhs/docker-kepler.gl.git
+docker build -t xunhs/kepler.gl https://github.com/xunhs/docker-kepler.gl.git
 ```
 
 
 ## Run
 
 ```bash
-docker run --name kepler.gl -p 8080:80 -d crazycapivara/kepler.gl
+docker run --name kepler.gl -p 8080:80 -d xunhs/kepler.gl
 
 # Optional: pass your mapbox access token to the container
 docker run  --name kepler.gl -p 8080:80 \
-	-e MapboxAccessToken="yourMapboxAccessToken" -d crazycapivara/kepler.gl
+	-e MapboxAccessToken="yourMapboxAccessToken" -d xunhs/kepler.gl
 ```
 
 Some modules need to be build at startup. Therefore, it will a take a minute until the container is ready to use
