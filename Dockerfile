@@ -1,7 +1,9 @@
 FROM node:13.10.1-alpine3.11
 
-LABEL maintainer="Stefan Kuethe <crazycapivara@gmail.com>"
+LABEL maintainer="Sheng <gishusheng@gmail.com>"
 
+# using ustc mirror
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk update \
 	&& apk upgrade \
 	&& apk add git
@@ -10,7 +12,9 @@ RUN git clone https://github.com/uber/kepler.gl.git
 
 WORKDIR /kepler.gl/examples/demo-app
 
-RUN npm install
+# using taobao npm source
+RUN npm install cnpm --registry=https://registry.npm.taobao.org
+RUN cnpm install
 
 ENV PATH "$PATH:/kepler.gl/examples/demo-app/node_modules/.bin"
 
