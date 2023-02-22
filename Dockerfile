@@ -8,8 +8,8 @@ RUN apk update \
         && apk add git
 
 # using gitee mirror in China
-RUN git clone https://gitee.com/xunhs/kepler.gl.git
-# RUN git clone https://github.com/uber/kepler.gl.git
+# RUN git clone https://gitee.com/xunhs/kepler.gl.git
+RUN git clone https://github.moeyy.xyz/https://github.com/keplergl/kepler.gl.git
 WORKDIR /kepler.gl/examples/demo-app
 
 # using taobao npm source
