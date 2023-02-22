@@ -13,10 +13,10 @@ RUN git clone https://github.moeyy.xyz/https://github.com/keplergl/kepler.gl.git
 WORKDIR /kepler.gl/examples/demo-app
 
 # using taobao npm source
-RUN alias cnpm="npm --registry=https://registry.npmmirror.com \
---cache=$HOME/.npm/.cache/cnpm \
---disturl=https://npmmirror.com/mirrors/node \
---userconfig=$HOME/.cnpmrc"
+RUN echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npmmirror.com \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npmmirror.com/mirrors/node \
+  --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
 RUN cnpm install
 
 ENV PATH "$PATH:/kepler.gl/examples/demo-app/node_modules/.bin"
