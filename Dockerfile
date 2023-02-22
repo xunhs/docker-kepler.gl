@@ -16,7 +16,7 @@ WORKDIR /kepler.gl/examples/demo-app
 RUN echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npmmirror.com \
   --cache=$HOME/.npm/.cache/cnpm \
   --disturl=https://npmmirror.com/mirrors/node \
-  --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
+  --userconfig=$HOME/.cnpmrc"' >> ~/.bashrc && source ~/.bashrc
 RUN cnpm install
 
 ENV PATH "$PATH:/kepler.gl/examples/demo-app/node_modules/.bin"
