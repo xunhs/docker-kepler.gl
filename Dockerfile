@@ -12,7 +12,7 @@ RUN git clone https://ghfast.top/https://github.com/keplergl/kepler.gl.git
 WORKDIR /kepler.gl/examples/demo-app
 
 # using taobao npm source
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm config set registry https://registry.npmmirror.com
 RUN npm install
 
 ENV PATH "$PATH:/kepler.gl/examples/demo-app/node_modules/.bin"
